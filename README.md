@@ -1,7 +1,7 @@
 ###Course Note for Start Learning React
 A course on egghead.io by Joe Maddalone
 
-###unit 1: Setting up
+####1 Use create-react-app to Setup a Simple React App
 =========
 1. install create-react-app, a tool for quickly scaffolding react app.
   Run `npm i -g create-react-app` to install globally.
@@ -9,7 +9,12 @@ A course on egghead.io by Joe Maddalone
 3. Remove all files in the src folder except for the App.js and index.js file.
 
 ### Components
+####2Write a "Hello World" React Component
 
+####3 Display Output in React with a Component's render Method
+
+
+####4 Set Properties on React Components
 ### Props
 We pass data to components using props. props is how we pass data
 around in React.
@@ -35,6 +40,7 @@ class App extends React.Component {
 }
 ```
 ###propTypes
+
 We can define the properties our component is looking for by adding
 propTypes
 
@@ -48,3 +54,6 @@ App.propTypes = {
 App.defaultProps = {
   txt: "this is default text"
 }
+
+
+####5 Manage React Component State with setState
