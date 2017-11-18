@@ -44,7 +44,46 @@ __A little explanation of the `import` s in `App.js` file:__
 
 
 #### 2 Write a "Hello World" React Component
+From the [official React doc](https://reactjs.org/docs/components-and-props.html) :
 
+>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.   
+Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+
+##### How to create components
+1. Class Components
+
+```javascript
+class App extends React.Component {
+  render() {
+    return <h1 className="hello-world">Hello World </h1>
+  }
+}
+```
+**Notes**
+
+- A class component can have a number of attributes or methods. The `render` method must be present
+- The `render` method is what, well, renders the component to the DOM.
+- The expression inside the `render` method above looks like `htm` but it is actually called `JSX`, syntax extension to JavaScript. In fact, see the [docs](https://reactjs.org/docs/introducing-jsx.html) for more on `JSX`.
+- All `JSX` get compiled down to Javascript: `React.createElement()` calls to be specific.
+
+
+2. Function components
+
+Simplest way to define a component is via Javasccript function. Like below:
+
+```javascript
+function App(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+or `ES6 style`:
+
+`const App = () => <h1>Hello World </h1>`
+
+**Notes**
+
+- As shown above, you can pass `props` or not. We discuss `props` below.
+- Function components are stateless. We look at state below as well. Sorry for getting ahead of myself.
 
 #### 3 Display Output in React with a Component's render Method
 
