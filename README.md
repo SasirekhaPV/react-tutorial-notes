@@ -88,6 +88,7 @@ or `ES6 style`:
 #### 3 Display Output in React with a Component's render Method
 
 
+
 #### 4 Set Properties on React Components
 ### Props
 We pass data to components using props. props is how we pass data
