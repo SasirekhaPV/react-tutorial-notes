@@ -103,10 +103,12 @@ render() {
 
 - Also use enclosing parenthesis, to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi)
 
+
 #### 4 Set Properties on React Components
-### Props
-We pass data to components using props. props is how we pass data
-around in React.
+__Basics of setting properties(props) in React components__
+
+Props is how we pass data
+around in React. We pass props to the component like below:
 
 ```javascript
 
@@ -115,34 +117,38 @@ ReactDOM.render(
   document.getElementById('root');
 )
 ```
+- In the example, we pass a prop called `txt` to the `App` component. 
+- It looks a lot like html attributes, syntax-wise.
+- In the component, we can access the props by interpolating with curly braces like below:
 
 ```javascript
 class App extends React.Component {
   render() {
-    return(
-      <div>
-    <h1>Hello Emeka </h1>
-    <p>Love you </p>
-    </div>
-    );
+    return <h1>{this.props.txt}</h1>
   }
 }
 ```
 ### propTypes
 
-We can define the properties our component is looking for by adding
-propTypes
+We can define the properties our component is looking for by adding `propTypes`:
 
+```javascript
 App.propTypes = {
   txt: React.propTypes.string,
   cat: React.propTypes.number.isRequired
 }
+```
+- This is an object in which the key is the `prop` and the value is the type of value we want the `prop` to have.
+- We can also append  `.isRequired` to a `propType` to show that it is required. Right.
 
 #### defaultProps
+We can set default props using, well, `defaultProps`:
 
+```javascript
 App.defaultProps = {
   txt: "this is default text"
 }
+```
 
 
 #### 5 Manage React Component State with setState
