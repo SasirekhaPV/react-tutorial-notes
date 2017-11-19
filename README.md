@@ -87,7 +87,21 @@ or `ES6 style`:
 
 #### 3 Display Output in React with a Component's render Method
 
+**Notes**
+- To return more than one element in a `render` method, you need to wrap it with a parent element. Like this:
 
+```javascript
+render() {
+  return (
+  <div>
+    <h1>Hello World </h1>
+    <b>Bold</b>
+  </div>
+  );
+}
+```
+
+- Also use enclosing parenthesis, to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi)
 
 #### 4 Set Properties on React Components
 ### Props
