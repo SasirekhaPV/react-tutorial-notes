@@ -8,7 +8,7 @@ Course Platform: [Egghead](egghead.io)
 
 Course Price: Free
 
-#### 1 Use create-react-app to Setup a Simple React App
+#### 1. Use create-react-app to Setup a Simple React App
 To work with React, we can use the `create-react-app` package on `npm`.
 
 Follow the steps below to install the package and  setup a react app.
@@ -43,7 +43,7 @@ __A little explanation of the `import` s in `App.js` file:__
 `import App from './App'` => Import the App component which is defined in `App.js`
 
 
-#### 2 Write a "Hello World" React Component
+#### 2. Write a "Hello World" React Component
 From the [official React doc](https://reactjs.org/docs/components-and-props.html) :
 
 >Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.   
@@ -85,7 +85,7 @@ or `ES6 style`:
 - As shown above, you can pass `props` or not. We discuss `props` below.
 - Function components are stateless. We look at state below as well. Sorry for getting ahead of myself.
 
-#### 3 Display Output in React with a Component's render Method
+#### 3. Display Output in React with a Component's render Method
 
 **Notes**
 - To return more than one element in a `render` method, you need to wrap it with a parent element. Like this:
@@ -104,7 +104,7 @@ render() {
 - Also use enclosing parenthesis, to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi)
 
 
-#### 4 Set Properties on React Components
+#### 4. Set Properties on React Components
 __Basics of setting properties(props) in React components__
 
 Props is how we pass data
@@ -149,6 +149,8 @@ App.defaultProps = {
   txt: "this is default text"
 }
 ```
+**Notes**
+- Props are read-only.
+- Consequently, all react components must act as pure functions with respect to their props.
 
-
-#### 5 Manage React Component State with setState
+#### 5. Manage React Component State with setState
