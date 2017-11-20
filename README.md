@@ -210,3 +210,28 @@ render() {
 - This means the child component gets to call the update method of the parent when a change happens in the cild component.
 - On a lighter note, it is like
 a parent giving a phone to his child(prop) and asking him to call him/her if anything happens. When the child calls, the parent responds accordingly(executes the method).
+
+#### 7. Access Nested Data with Reacts props.children
+First, the code:
+
+```javascript
+class App extends React.Component {
+  render(){
+    return <Button> I <Heart /> React </Button>
+  }
+}
+
+const Button = (props) => <button>{props.children}</button>
+
+class Heart extends React.Component {
+  render() {
+    return <span>&hearts;</span>
+  }
+}
+```
+**Notes**
+- Our `App` component renders the `Button` component.
+- The `Button` component encloses the `Heart` component
+and the React text.
+- The `Button` component has access to the contents within
+its opening and closing tags via `props.children`.
