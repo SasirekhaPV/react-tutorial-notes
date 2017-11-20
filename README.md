@@ -154,3 +154,59 @@ App.defaultProps = {
 - Consequently, all react components must act as pure functions with respect to their props.
 
 #### 5. Manage React Component State with setState
+`State` is a collection of values managed and updated by the component.
+To get started using state, we need to set up a `constructor` method on
+our component.
+
+```javascript
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      txt: 'this is the state txt'
+    }
+    this.update = this.update.bind(this);
+  }
+  update (e) {
+    this.setState({txt: e.target.value})
+  }
+  render() {
+    return (
+      <div>
+      <input type="text" onChange={this.update}/>
+        <h1>{this.state.txt}</h1>
+      </div>
+    );
+  }
+}
+```
+**Notes**
+- We use `this.setState` to update the component's state when an event happens or something
+changes.
+- Run the app to see the results.
+
+#### 6. Use React Components as Children for Other components
+A react component can output or render other components(its children).
+It's better shown by an example. Let's create a functional component as
+below:
+```javascript
+const Widget = (props) => {
+  <input type="text" onChange={props.update} />
+}
+```
+and change our `App` component to render the `Widget` component:
+
+```javascript
+render() {
+  return (
+    <div>
+    <h1>{this.state.txt}</h1>
+    <Widget update={this.update} />
+  );
+}
+```
+**Notes**
+- We are passing the update method as a prop to the Widget component.
+- This means the child component gets to call the update method of the parent when a change happens in the cild component.
+- On a lighter note, it is like
+a parent giving a phone to his child(prop) and asking him to call him/her if anything happens. When the child calls, the parent responds accordingly(executes the method).
