@@ -235,3 +235,5 @@ class Heart extends React.Component {
 and the React text.
 - The `Button` component has access to the contents within
 its opening and closing tags via `props.children`.
+
+#### 8. Add Custom propType Validation to React Components
